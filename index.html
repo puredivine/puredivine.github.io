@@ -11,29 +11,37 @@
             background-image: url("./board.png");
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-size: contain; 
+            background-size: 638px 902px; 
             /* 891px 1260px */
             }
         </style>
 
         <!-- <button onclick="test()">dsgdgsd</button> -->
         <button onclick="start_func()" id="start_btn" class="button start">Start</button>
-        
-        <button id="card" class="card11" style="display: none;">c</button>
-        <button id="card" class="card12" style="display: none;">c</button>
-        <button id="card" class="card13" style="display: none;">c</button>
-        
-        <button id="card" class="card21" style="display: none;">c</button>
-        <button id="card" class="card22" style="display: none;">c</button>
-        <button id="card" class="card23" style="display: none;">c</button>
-        
-        <button id="card" class="card31" style="display: none;">c</button>
-        <button id="card" class="card32" style="display: none;">c</button>
-        <button id="card" class="card33" style="display: none;">c</button>
 
-        <button id="card" class="card41" style="display: none;">c</button>
-        <button id="card" class="card42" style="display: none;">c</button>
-        <button id="card" class="card43" style="display: none;">c</button>
+        <!-- card images -->
+        <img src="./card_imgs/Card-back.png" id="card_back_img" class="card_back1" style="display: none;">
+        <img src="./card_imgs/Card-back.png" id="card_back_img" class="card_back2" style="display: none;">
+        <img src="./card_imgs/Card-back.png" id="card_back_img" class="card_back3" style="display: none;">
+        <img src="./card_imgs/Card-back.png" id="card_back_img" class="card_back4" style="display: none;">
+        
+        <!-- size: 156px 219px -->
+        <button id="card" class="card11" style="display: none;" onclick="pick_card(11)">c</button>
+        <button id="card" class="card12" style="display: none;" onclick="pick_card(12)">c</button>
+        <button id="card" class="card13" style="display: none;" onclick="pick_card(13)">c</button>
+        
+        <button id="card" class="card21" style="display: none;" onclick="pick_card(21)">c</button>
+        <button id="card" class="card22" style="display: none;" onclick="pick_card(22)">c</button>
+        <button id="card" class="card23" style="display: none;" onclick="pick_card(23)">c</button>
+        
+        <button id="card" class="card31" style="display: none;" onclick="pick_card(31)">c</button>
+        <button id="card" class="card32" style="display: none;" onclick="pick_card(32)">c</button>
+        <button id="card" class="card33" style="display: none;" onclick="pick_card(33)">c</button>
+
+        <button id="card" class="card41" style="display: none;" onclick="pick_card(41)">c</button>
+        <button id="card" class="card42" style="display: none;" onclick="pick_card(42)">c</button>
+        <button id="card" class="card43" style="display: none;" onclick="pick_card(43)">c</button>
+        
 
     </body>
 </html>
@@ -43,9 +51,18 @@
         const target = document.getElementById("start_btn");
         target.style = "display: none;";
         
-        const cards = document.querySelectorAll("[id='card']")
-        for (var i = 0; i < cards.length; i++) {
-            cards[i].style = 'display: block;';
+        const cards_btn = document.querySelectorAll("[id='card']")
+        for (var i = 0; i < cards_btn.length; i++) {
+            cards_btn[i].style = 'display: block;';
         }
+
+        const cards_pick = document.querySelectorAll("[id='card_back_img']")
+        for (var i = 0; i < cards_pick.length; i++) {
+            cards_pick[i].style = 'display: block;';
+        }
+    }
+
+    function pick_card(pos) {
+        alert(pos)
     }
 </script>
